@@ -326,7 +326,6 @@ window.onload = function(){
 		
 		if(is_imu2_connected){
 			//Update data value
-			console.log(alfa2)
 			imu2_chart_instance.data.datasets[0].data.push(alfa2);
 			imu2_chart_instance.data.labels.push(label);
 			
