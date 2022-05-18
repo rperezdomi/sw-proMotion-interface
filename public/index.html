@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Werium Assistive Solutions</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/google-fonts-nunito.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/google-fonts-montserrat.css">
+    <link rel="stylesheet" href="assets/css/cloudflareAjaxBaguetteboxbaguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/smoothproducts.css">
+    <link rel="stylesheet" href="assets/css/move_arrows.css">
+    <link rel="stylesheet" href="assets/css/button_styles.css">
+
+
+    <!-- Solid Fontawesome icons-->
+    <script src="assets/js/v5.15.1jsall.js" data-auto-replace-svg></script>
+    <link rel="stylesheet" href="assets/css/v508csssolid.css">
+    
+    <style>
+      .flex-container {
+        display: flex;
+        align-items: center; /* Use another value to see the result */
+        width: 60%;
+        height: 600px;
+      }
+    </style>
+    
+</head>
+
+<body id="page-top" >
+    <div id="wrapper">
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand shadow mb-4 topbar static-top" style="background-color: #4e73df;">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav flex-nowrap ml-auto">
+                            <div class="d-none d-sm-block topbar-divider"></div>
+                            <li class="nav-item dropdown no-arrow" role="presentation">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><img class="img" src="assets/img/letras.png" style= "height:80%"><img class="img" src="assets/img/logoblanco.png" style= "height:80%"></a>
+                               
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div>
+                <p></p>
+                </div>
+                <center>
+					<div class="mb-3 d-flex centered">
+						<button class="btn btn-primary " value="off" id="connect_imu" type="submit" style="margin:5px; background: #4e73df; border-color: #0968e4; "> Conectar IMU 1</button>
+						<button class="btn btn-primary " value="off" id="connect_imu2" type="submit" style="margin:5px; background: #4e73df; border-color: #0968e4; "> Conectar IMU 2 </button>
+					</div>
+						
+					<div class="mb-3 d-flex centered">
+						<button class="btn btn-primary " value="off" id="record" type="submit" disabled=true style="margin:5px; background: #808080; border-color: #0968e4;"> Iniciar Grabación</button>
+						<button class="btn btn-primary " value="off" id="stop" type="submit" disabled=true  style="margin:5px; background: #808080; border-color: #0968e4; "> Parar Grabación</button>
+						<button class="btn btn-primary " value="off" id="save" type="submit" disabled=true  style="margin:5px; background: #808080; border-color: #0968e4; "> Descargar </button>
+					</div>
+					
+					<div class="mb-3 d-flex centered">
+						<button class="btn btn-primary " value="off" id="calibrate" type="submit" style="margin:5px; background: #4e73df; border-color: #0968e4; display:none"> Calibrar </button>
+					</div>
+					
+					<!-- GRAPHS -->
+					<div id="jointCharts" class="card shadow mb-4">
+						<div class="container-fluid">
+							<br>
+							<!--
+							<div class="row mb-3">
+								<div class="col-lg-10 mx-auto">
+									<div class="card mb-3">
+										<div class="card-header d-flex justify-content-between align-items-center">
+											<h5 class="text-primary font-weight-bold m-0" style="width:100%;text-align: center;"> Alfa </h5>
+										</div>
+										<div class="card-body">
+											<div class="chart-area" >
+												<div id="alfa">
+													<canvas id="alfa_chart"></canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							-->
+							<div class="row mb-3">
+								<div class="col-lg-10 mx-auto">
+									<div class="card mb-3">
+										<div class="card-header d-flex justify-content-between align-items-center">
+											<h5 class="text-primary font-weight-bold m-0" style="width:100%;text-align: center;">Sensor 1</h5>
+										</div>
+										<div class="card-body">
+											<div class="chart-area" >
+												<div id="beta">
+													<canvas id="beta_chart"></canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--
+							<div class="row mb-3">
+								<div class="col-lg-10 mx-auto">
+									<div class="card mb-3">
+										<div class="card-header d-flex justify-content-between align-items-center">
+											<h5 class="text-primary font-weight-bold m-0" style="width:100%;text-align: center;">Gamma</h5>
+										</div>
+										<div class="card-body">
+											<div class="chart-area" >
+												<div id="gamma">
+													<canvas id="gamma_chart"></canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							-->
+							<div class="row mb-3">
+								<div class="col-lg-10 mx-auto">
+									<div class="card mb-3"  >
+										<div class="card-header d-flex justify-content-between align-items-center">
+											<h5 class="text-primary font-weight-bold m-0" style="width:100%;text-align: center;"> Sensor 2 </h5>
+										</div>
+										<div class="card-body" >
+											<div class="chart-area" style="height: 60rem;">
+												<div id="pressure">
+													<canvas id="beta2_chart"></canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</center>            
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © Werium Assistive Solutions 2021</span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/cdnjscloudflareAjaxLibsChartjs280Chart.bundle.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/cdnjsCloudflareAjaxLibsJquery-easing141Jquery.easing.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="pressure_home.js"></script>
+
+</body>
+
+</html>
