@@ -178,14 +178,21 @@ window.onload = function(){
 		}
 	}	
 	
+	var starting_time;
+	var current_time;
+	var therapy_started;
 	document.getElementById("record").onclick = function() {
 		socket.emit('pressure:start');
+		therapy_started = true;
+		starting_time =  Date.now();
 		document.getElementById("record").disabled = true;
 		document.getElementById("stop").disabled = false;
+		document.getElementById("timer").style.display = "block";
 		
 	}
 	document.getElementById("stop").onclick = function() {
 		socket.emit('pressure:stop');
+		therapy_started = false;
 		document.getElementById("record").disabled = false;
 		document.getElementById("stop").disabled = true;
 		document.getElementById("save").disabled = false;
@@ -195,7 +202,7 @@ window.onload = function(){
 		socket.emit('pressure:download');
 		document.getElementById("save").disabled = true;
 		window.open('http://localhost:3000/downloadpressuresensor');
-		
+		document.getElementById("timer").style.display = "none";
 	}
 	document.getElementById("calibrate").onclick = function() {
 		socket.emit('pressure:calibrate');
@@ -209,6 +216,7 @@ window.onload = function(){
 		let device= data.device;
 		let status= data.status;
 		console.log(data);
+
 		if(device == 'imu1'){
 			if (status==0){
 				console.log("is con")
@@ -345,6 +353,17 @@ window.onload = function(){
 		imu1_chart_instance.update();
 		imu2_chart_instance.update();
 		
+		if(!is_imu_connected | !is_imu2_connected){
+			document.getElementById("timer").style.display = "none"
+		}
+		if(therapy_started){
+			
+			let elapsed_time = Date.now() - starting_time;
+			let minutes = Math.floor(elapsed_time / 1000 / 60)
+			let seconds = Math.floor(elapsed_time / 1000)
+			let miliseconds = elapsed_time - seconds*1000
+			document.getElementById("timer").innerHTML = minutes + ":" + seconds + "." + miliseconds
+		}
 		
 
 	});

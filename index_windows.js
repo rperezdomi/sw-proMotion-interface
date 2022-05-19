@@ -471,7 +471,7 @@ function calculateEuler(){
 		try{
 			
 			// CONVENIO desviacion radial y cubital + FLEXOEXTENSION
-			alfa = -Math.atan2(-RT[2][0], RT[2][2]) * 180 / Math.PI;
+			alfa = Math.atan2(-RT[2][0], RT[2][2]) * 180 / Math.PI;
 			beta = Math.atan2(-RT[0][1], RT[1][1]) * 180 / Math.PI;;
 			gamma = Math.atan2(-RT[1][2], RT[1][1]) * 180 / Math.PI;
 						
@@ -493,7 +493,7 @@ function calculateEuler2(){
 		try{
 			
 			// CONVENIO desviacion radial y cubital + FLEXOEXTENSION
-			alfa2 = -Math.atan2(-RT2[2][0], RT2[2][2]) * 180 / Math.PI;
+			alfa2 = Math.atan2(-RT2[2][0], RT2[2][2]) * 180 / Math.PI;
 			beta2 = Math.atan2(-RT[0][1], RT[1][1]) * 180 / Math.PI;;
 			gamma2 = Math.atan2(-RT[1][2], RT[1][1]) * 180 / Math.PI;
 						
