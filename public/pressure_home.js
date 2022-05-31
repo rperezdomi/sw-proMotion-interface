@@ -267,6 +267,7 @@ window.onload = function(){
 				document.getElementById("connect_imu2").value = "on";
 				document.getElementById("connect_imu2").innerHTML = "Desconectar IMU 2";
 				document.getElementById("connect_imu2").style.background = "#4eb14e";
+				document.getElementById("calibrate").style.display = "block";
 				is_imu2_connected = true;
 				resetGraphs();
 				if(is_imu2_connected){
