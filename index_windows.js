@@ -24,7 +24,7 @@ var msecondsFromLastMessage_imu2= 0;
 //
 // Express initialization SWalker
 const app = express();
-app.set('port', process.env.PORT || 3000)
+app.set('port', process.env.PORT || 4000)
 // Send static files
 app.use(express.static(path.join(__dirname, 'public')));
 // Configure PORT of the web
